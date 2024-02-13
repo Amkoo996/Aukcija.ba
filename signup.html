@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bosnian Lilium 387 Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="signup.css">
+    <!-- Include intl-tel-input library from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <!-- ... Your navigation menu ... -->
+    </header>
+
+    <main>
+        <div class="main-container"> <!-- Updated class name -->
+            <section id="signup">
+                <header>
+                    <h1>Sign Up</h1>
+                </header>
+                <form id="signup-form" onsubmit="return validateForm()">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" required><br>
+
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" required><br>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required><br>
+
+                    <!-- Country Code Input with Intl Tel Input -->
+                    <div>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <!-- "I am not a robot" verification -->
+                    <label for="notARobot">I am not a robot:</label>
+                    <input type="checkbox" id="notARobot" name="notARobot" required><br>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="index.html">Log in</a></p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Include a footer -->
+    <footer class="footer">
+        <!-- Your footer content goes here -->
+    </footer>
+
+    <!-- Include intl-tel-input library scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+
+    <script>
+        // Initialize the intlTelInput library
+        var input = document.querySelector("#phone");
+        var iti = window.intlTelInput(input, {
+            initialCountry: "auto",
+            geoIpLookup: function (success, failure) {
+                fetch("https://ipinfo.io", {
+                    mode: "cors",
+                })
+                    .then(function (resp) {
+                        var countryCode = (resp && resp.country) ? resp.country : "us";
+                        success(countryCode);
+                    })
+                    .catch(function () {
+                        failure("us");
+                    });
+            },
+        });
+
+        // Create a dropdown for country codes
+        var countryDropdown = iti.getCountryList();
+        var dropdownElement = document.querySelector("#countryCode");
+
+        // Add country options
+        countryDropdown.forEach(function (country) {
+            var option = document.createElement("option");
+            option.value = country.iso2;
+            option.text = country.name;
+            dropdownElement.appendChild(option);
+        });
+
+        function validateForm() {
+            // Get the entered age
+            var ageInput = document.getElementById("age").value;
+
+            // Get the entered email
+            var emailInput = document.getElementById("email").value;
+
+            // Check if age is negative
+            if (ageInput < 16) {
+                alert("Please enter a valid age.");
+                return false;
+            }
+
+            // Check if email contains "@" symbol
+            if (emailInput.indexOf("@") === -1) {
+                alert("Invalid email address. Please include the '@' symbol.");
+                return false;
+            }
+
+            // Validate First Name and Last Name
+            var firstNameInput = document.getElementById("firstname").value;
+            var lastNameInput = document.getElementById("lastname").value;
+
+            // Regular expression to check if the input consists of letters with the first letter in uppercase
+            var namePattern = /^[A-Z][a-z]*$/;
+
+            if (!namePattern.test(firstNameInput)) {
+                alert("Invalid First Name. Please use only letters with the first letter capitalized.");
+                return false;
+            }
+
+            if (!namePattern.test(lastNameInput)) {
+                alert("Invalid Last Name. Please use only letters with the first letter capitalized.");
+                return false;
+            }
+
+            // Validate Phone Number
+            var phoneNumber = iti.getNumber();
+            if (!phoneNumber) {
+                alert("Invalid phone number. Please enter a valid phone number.");
+                return false;
+            }
+
+            // Basic address validation
+            var addressInput = document.getElementById("address").value;
+
+            if (addressInput.trim() === "") {
+                alert("Address cannot be empty.");
+                return false;
+            }
+
+            // You can add more custom validation here if needed.
+            // For now, this form just submits.
+            alert("Sign up successful!"); // You can replace this with your desired action.
+
+            // Redirect to index.html after signup
+            window.location.href = "collection.html";
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

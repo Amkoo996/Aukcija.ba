@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags and title go here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prva Aukcija stranica u Bosni i Hercegovini</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <main>
+        <div id="login-wrapper"> <!-- Added wrapper div -->
+            <section id="login">
+                <header>
+                    <h1>Prijava</h1>
+                </header>
+                <form id="login-form" onsubmit="return checkLogin()">
+                    <label for="username">Korisničko ime:</label>
+                    <input type="text" id="username" name="Korisničko ime" required><br>
+                    <label for="password">Lozinka:</label>
+                    <input type="password" id="password" name="Lozinka" required><br>
+                    <button type="submit">Prijava</button>
+                </form>
+                <p>Nemaš nalog? <a href="signup.html" style="color: lightblue;">Registruj se</a></p>
+                <!-- Link to the signup page -->
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <h3>Kontakt informacije</h3>
+            <p>Email: 387econ@gmail.com</p>
+            <p>Location: Zeleni put 108, Ilidža, 71000 Sarajevo, Bosnia and Herzegovina</p>
+        </div>
+    </footer>
+
+    <script>
+        function checkLogin() {
+            // Replace these with your actual username and password
+            var validUsername = "ahmed";
+            var validPassword = "ahmed";
+
+            // Get the entered username and password
+            var enteredUsername = document.getElementById("username").value;
+            var enteredPassword = document.getElementById("password").value;
+
+            // Check if the entered username and password are correct
+            if (enteredUsername === validUsername && enteredPassword === validPassword) {
+                // Redirect to protected.html
+                window.location.href = "protected.html";
+                return false; // Prevent form submission
+            } else {
+                // Display an error message (you can customize this part)
+                alert("Invalid username or password. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+
+</html>

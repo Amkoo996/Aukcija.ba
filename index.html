@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css"> <!-- Add a separate CSS file for the navbar -->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aukcija.ba</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.html"><img src="your-logo.png" alt="Aukcija.ba Logo"></a>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Traži proizvode...">
+            <button>Pretraga</button>
+        </div>
+        <div class="user-options">
+            <a href="saved.html">Spašeni proizvodi</a>
+            <a href="notifications.html">Notifikacije</a>
+
+        <!-- Add a button to open the login popup -->
+        <button id="show-login" onclick="openLoginPopup()">Prijava</button>
+        
+        <!-- The login popup -->
+        <div class="popup" id="login-popup">
+            <div class="close-btn" onclick="closeLoginPopup()">×</div>
+            <div class="form">
+                <h2>Dobro došli nazad</h2>
+                <p>Prijavite se da biste vidjeli proizvode.</p>
+                <div class="form-element">
+                    <label for="username">Korisničko ime:</label>
+                    <input type="text" id="username" placeholder="Unesite korisničko ime">
+                </div>
+                <div class="form-element">
+                    <label for="password">Lozinka:</label>
+                    <input type="password" id="password" placeholder="Unesite lozinku">
+                </div>
+                <div class="form-element">
+                    <button onclick="checkLogin()">Prijavi se</button>
+                </div>
+                <a href="forget-password.html">Zaboravljena lozinka?</a>
+               <div class="popup" id="forgot-password-popup">
+                    <button onclick="checkLogin()">Zaboravljena lozinka?</button>
+                    <div class="close-btn" onclick="closeForgotPasswordPopup()">×</div>
+                    <div class="form">
+                        <h2>Recover Password</h2>
+                        <p>Enter your email to reset your password.</p>
+                        <div class="form-element">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="Enter Email" required>
+                        </div>
+                        <button onclick="submitForgotPassword()">Submit</button>
+                    </div>
+                </div>
+                <div class="google-signin">
+                    <button class="google-btn" onclick="signInWithGoogle()">Prijava putem Google računa</button>
+                </div>
+                <div class="terms-text">
+                    By continuing with Google, you agree to Aukcija.ba <a href="#">terms of service</a> and <a
+                        href="#">privacy policy</a>. Invaluable may send you communications; you can set your preferences in
+                    your account.
+                </div>
+            </div>
+        </div>
+            </div>
+                <a href="signup.html">Registracija</a>
+            </div>
+        </div>
+    </div>
+
+    </header>
+    <!-- Your existing navbar goes here -->
+
+    <div class="horizontal-menu">
+        <ul>
+            <li><a href="#">Aukcije</a></li>
+            <li><a href="#">Posljednji proizvodi</a></li>
+            <li><a href="#">Nakit</a></li>
+            <li><a href="#">Uređaji</a></li>
+            <li><a href="#">Elektronika</a></li>
+            <li><a href="#">Aksesoar</a></li>
+        </ul>
+    </div>
+
+<!-- Your other content goes here -->
+
+<!-- Product blocks -->
+<div class="product-block">
+    <div class="product-image">
+        <img src="Prozvodi\Punjaczaiphone.png" alt="Product 1">
+    </div>
+    <div class="product-details">
+        <h2>Punjač za Iphone</h2>
+        <p>Adapter - punjac jacine 20W za brzo punjenje ( 0%-50% za ~30min).</p>
+        <p>Aukcija počinje: <span class="auction-date">Februar 15, 2024</span> at <span class="auction-time">10:00
+                AM</span></p>
+    </div>
+    <div class="timed-auction">
+        <div class="countdown-clock">
+            <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+        </div>
+        <p class="price">Početna cijena: 10.00 KM</p>
+        <button class="register-button">Registruj se da bidaš</button>
+    </div>
+</div>
+
+<!-- Repeat the above structure for other products (total 15) -->
+
+<!-- Your other content goes here -->
+<!-- Product blocks -->
+<div class="product-block">
+    <div class="product-image">
+        <img src="Prozvodi\punjaczaandroid.jpg" alt="Product 1">
+    </div>
+    <div class="product-details">
+        <h2>Punjač za Android</h2>
+        <p>Standardni strujni punjač sa funkcijom brzog punjenja od 15 W
+        Povezivanje: USB-C
+        Poseduje zaštitu od prekomjerne struje</p>
+        <p>Aukcija počinje <span class="auction-date">Februar 15, 2024</span> at <span class="auction-time">10:00
+                AM</span></p>
+    </div>
+    <div class="timed-auction">
+        <div class="countdown-clock">
+            <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+        </div>
+        <p class="price">Početna cijena: 5.00 KM</p>
+        <button class="register-button">Registruj se da bidaš</button>
+    </div>
+</div>
+
+<!-- Repeat the above structure for other products (total 15) -->
+
+<!-- Your other content goes here -->
+<!-- Product blocks -->
+<div class="product-block">
+    <div class="product-image">
+        <img src="Prozvodi\ps4.jpg" alt="Product 1">
+    </div>
+    <div class="product-details">
+        <h2>Playstation 4</h2>
+        <p>PS4 konzola, koji pruža izuzetnu snagu za igranje, neverovatnu zabavu i živopisnu HDR tehnologiju.</p>
+        <p>Aukcija počinje <span class="auction-date">Februar 15, 2024</span> at <span class="auction-time">10:00
+                AM</span></p>
+    </div>
+    <div class="timed-auction">
+        <div class="countdown-clock">
+            <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+        </div>
+        <p class="price">Početna cijena: 70.00 KM</p>
+        <button class="register-button">Registruj se da bidaš</button>
+    </div>
+</div>
+
+<!-- Repeat the above structure for other products (total 15) -->
+
+<!-- Your other content goes here -->
+<!-- Product blocks -->
+<div class="product-block">
+    <div class="product-image">
+        <img src="product1.jpg" alt="Product 1">
+    </div>
+    <div class="product-details">
+        <h2>Product Name</h2>
+        <p>Description of the product goes here.</p>
+        <p>Auction starts on <span class="auction-date">March 15, 2024</span> at <span class="auction-time">10:00
+                AM</span></p>
+    </div>
+    <div class="timed-auction">
+        <div class="countdown-clock">
+            <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+        </div>
+        <p class="price">Starting bid: $100</p>
+        <button class="register-button">Register to Bid</button>
+    </div>
+</div>
+
+<!-- Repeat the above structure for other products (total 15) -->
+
+<!-- Your other content goes here -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#">Blog</a>
+            <a href="#">O nama</a>
+            <a href="#">Kontakt</a>
+            <a href="#">Karijera</a>
+        </div>
+        <div class="footer-info">
+            <p>Stay connected to the things you love with curated items and auctions sent to your inbox.</p>
+            <p>You can unsubscribe at any time. View our <a href="#">Privacy Policy</a>.</p>
+        </div>
+        <div class="live-chat">
+            <a href="#">Live Chat</a>
+            <div class="star-rating">4.7 star rating (7233 Reviews)</div>
+        </div>
+    </div>
+    <div class="footer-logo">
+        <img src="invaluable-logo.png" alt="Invaluable Logo">
+    </div>
+    <div class="footer-copyright">
+        © 1986-2024 Aukcija.ba, LLC. and participating auction houses. All Rights Reserved.
+    </div>
+    <div class="footer-terms">
+        <a href="#">Terms</a> | <a href="#">Subscription Agreement</a> | <a href="#">Privacy Policy</a> | <a
+            href="#">Copyright</a> | <a href="#">GDPR Info</a> | <a href="#">Privacy Choice</a> | <a href="#">Your
+            Privacy Choices</a> | <a href="#">Site Map</a>
+    </div>
+
+</footer>
+           
+   
+
+    <script>
+        function openLoginPopup() {
+            document.getElementById('login-popup').style.display = 'block';
+        }
+
+        function closeLoginPopup() {
+            document.getElementById('login-popup').style.display = 'none';
+        }
+        // Your existing JavaScript functions (openLoginPopup, closeLoginPopup, checkLogin) go here
+
+        function signInWithGoogle() {
+            // Implement Google Sign-In logic here
+            // Redirect or perform necessary actions
+         }
+
+    </script>
+
+</body>
+
+
+
+</html>

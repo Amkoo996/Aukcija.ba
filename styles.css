@@ -1,0 +1,207 @@
+/* In your styles.css */
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* Distribute items evenly */
+    align-items: center;
+    /* Vertically center items */
+}
+
+/* In your styles.css */
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* Use a custom font */
+}
+
+/* In your styles.css */
+a:hover {
+    color: #ff5733;
+    /* Change link color on hover */
+}
+
+button::before {
+    content: '\f055';
+    /* Add an icon before button text */
+    font-family: FontAwesome;
+    /* Assuming you have the font loaded */
+}
+
+/* In your styles.css */
+.button {
+    transition: background-color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.button:hover {
+    background-color: #f2f2f2;
+    /* Lighten background on hover */
+}
+
+/* In your styles.css */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        /* Hide menu on small screens */
+    }
+}
+
+/* styles.css */
+
+/* Header styling */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    /* White background */
+    border-bottom: 2px solid #e0e0e0;
+    /* Light gray border at the bottom */
+}
+
+.logo img {
+    max-height: 40px;
+    /* Adjust logo height */
+}
+
+.search-box {
+    flex-grow: 1;
+    /* Expand to fill available space */
+    margin: 0 20px;
+    /* Add some spacing around the search box */
+}
+
+.user-options a {
+    margin-right: 20px;
+    /* Space out user options */
+    text-decoration: none;
+    color: #333;
+    /* Dark gray text color */
+}
+
+/* Separator styling */
+.header-separator {
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+    /* Light gray separator color */
+    margin: 20px 0;
+    /* Add spacing above and below the separator */
+}
+
+/* styles.css */
+
+/* Horizontal menu styling */
+.horizontal-menu {
+    border-bottom: 1px solid #ccc;
+    /* Add a separating line */
+}
+
+.horizontal-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* Use flexbox for equal spacing */
+}
+
+.horizontal-menu li {
+    flex: 1;
+    /* Distribute equal space among list items */
+    text-align: center;
+    /* Center-align the text */
+}
+
+.horizontal-menu li a {
+    display: block;
+    color: #333;
+    /* Set your desired link color */
+    text-decoration: none;
+    padding: 10px;
+    /* Adjust padding as needed */
+}
+
+/* Change the link color on hover */
+.horizontal-menu li a:hover {
+    background-color: #ddd;
+    /* Set your desired hover background color */
+}
+
+/* styles.css */
+
+/* Main footer container */
+/* styles.css */
+
+/* Main footer container */
+.main-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Other footer information styling */
+.footer-info {
+    position: relative;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+    /* Set text color */
+}
+
+/* styles.css */
+
+/* Product block styling */
+.product-block {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+/* Product image styling */
+.product-image img {
+    width: 150px;
+    /* Set your desired fixed size */
+    height: 150px;
+}
+
+/* Product details styling */
+.product-details {
+    flex: 1;
+    padding: 0 20px;
+}
+
+/* Auction date and time styling */
+.auction-date,
+.auction-time {
+    font-weight: bold;
+}
+
+/* Timed auction styling */
+.timed-auction {
+    flex: 1;
+    text-align: right;
+}
+
+/* Countdown clock styling */
+.countdown-clock {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Price styling */
+.price {
+    margin-top: 10px;
+}
+
+/* Register button styling */
+.register-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
